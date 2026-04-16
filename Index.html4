@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings - Probability AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f0f1f2",
+                    "primary-fixed": "#e1e0ff",
+                    "on-background": "#191c1d",
+                    "inverse-surface": "#2e3132",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#424344",
+                    "on-secondary-fixed": "#001a41",
+                    "on-secondary-fixed-variant": "#004493",
+                    "on-primary-fixed-variant": "#373a9b",
+                    "on-surface": "#191c1d",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "surface-container": "#edeeef",
+                    "outline-variant": "#c5c5d4",
+                    "primary": "#333697",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#4f54b4",
+                    "tertiary-fixed": "#e2e2e2",
+                    "secondary-fixed": "#d8e2ff",
+                    "surface-bright": "#f8f9fa",
+                    "secondary-container": "#0070eb",
+                    "secondary": "#0058bc",
+                    "outline": "#757684",
+                    "primary-container": "#4b4fb0",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "on-secondary-container": "#fefcff",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-primary-fixed": "#04006d",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#d3d3d3",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "surface-container-high": "#e7e8e9",
+                    "surface-container-low": "#f3f4f5",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e1e3e4",
+                    "on-primary-container": "#ceceff",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "inverse-primary": "#c0c1ff",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "surface-dim": "#d9dadb",
+                    "surface": "#f8f9fa",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#454652",
+                    "tertiary-container": "#595b5b",
+                    "background": "#f8f9fa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm shadow-indigo-900/5 flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-500 hover:bg-slate-100 p-2 rounded-full transition-colors active:scale-95 duration-300 ease-in-out">menu</button>
+<h1 class="text-xl font-bold tracking-tighter text-slate-900 dark:text-slate-50">Probability AI</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-container flex items-center justify-center">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Professional headshot of a smiling young man in a clean studio environment with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG9aRCrBpJzpwAIhEX2kTISXs00X2XC4V-tMicKePbu1LuRb3liapbUUVjo_cCQdpdOZnBPTZa2VMDP1Cw1FLfE7NFtjYr0YBsxo24Abt1rz5qG60i_DMLElPQxGi5l0JQnxssY5E6cp6g7Q6Oq90bjkh1CLxw8C99bUm3bXLTdSXci3fFBoq8RQW40QIDZrMiwFj9Ty2bqvGwZ5GmGkYAZACCHlrg4z-_QhoRbO7_bIkKMwS5LEbmOe_pZNfrJgJXHgv0cArIXBan"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto">
+<!-- User Profile Section -->
+<section class="mb-10 text-center">
+<div class="relative inline-block mb-4">
+<div class="w-24 h-24 rounded-full p-1 bg-gradient-to-br from-primary to-secondary">
+<div class="w-full h-full rounded-full overflow-hidden border-4 border-white">
+<img alt="Profile Image" class="w-full h-full object-cover" data-alt="Close-up portrait of a user with a friendly expression, soft lighting against a neutral grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI_7XhPuX60vZ5rqn2FhAHZwUQMLN1-_ePNJKV4BvcJbkujtfRcuVpkxo14Kq0hy4_wZih2VI3cW_WUT-TR24OZafTGITNWx8JG8Ca6b6OE6uY98H89qFdeAf18NKrp3q3cTszUfRekkuQXakRTEJoxfZyFeUBu2BmyGarCQ0JjtNXesIsqAIrJtbuV2cKc7VSiMwaQ-EbSqqUsoAxq2wEeyB9-aRIzfcsaA_3ik6e5DgJi2Q7Em4_zueu_3UNWc9Tt19XUy3H5C9U"/>
+</div>
+</div>
+</div>
+<h2 class="text-2xl font-extrabold tracking-tight text-on-surface mb-1">Alex Chen</h2>
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-semibold tracking-wider uppercase">
+                Free Tier
+            </div>
+</section>
+<!-- Bento Style Information Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+<div class="p-6 rounded-3xl bg-surface-container-low flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary mb-3">bolt</span>
+<h3 class="font-bold text-on-surface">Pro Engine</h3>
+</div>
+<p class="text-sm text-on-surface-variant mt-2">Upgrade to unlock the Intelligent Void Engine for complex reasoning.</p>
+</div>
+<div class="p-6 rounded-3xl bg-primary text-on-primary flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined mb-3" style="font-variation-settings: 'FILL' 1;">stars</span>
+<h3 class="font-bold">Go Premium</h3>
+</div>
+<button class="mt-4 px-4 py-2 bg-white/20 hover:bg-white/30 transition-colors rounded-xl text-xs font-bold text-center">LEARN MORE</button>
+</div>
+</div>
+<!-- Minimalist Settings List -->
+<nav class="space-y-1">
+<!-- Account -->
+<a class="flex items-center justify-between p-4 rounded-2xl hover:bg-surface-container-low transition-all duration-300 group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 group-hover:bg-indigo-100 transition-colors">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<span class="block font-semibold text-on-surface">Account</span>
+<span class="text-xs text-on-surface-variant">Profile info, email, security</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</a>
+<!-- Privacy -->
+<a class="flex items-center justify-between p-4 rounded-2xl hover:bg-surface-container-low transition-all duration-300 group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-600 group-hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined">shield</span>
+</div>
+<div>
+<span class="block font-semibold text-on-surface">Privacy</span>
+<span class="text-xs text-on-surface-variant">Data sharing, visibility controls</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</a>
+<!-- Language -->
+<a class="flex items-center justify-between p-4 rounded-2xl hover:bg-surface-container-low transition-all duration-300 group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-600 group-hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined">translate</span>
+</div>
+<div>
+<span class="block font-semibold text-on-surface">Language</span>
+<span class="text-xs text-on-surface-variant">English (US)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</a>
+<!-- Help & Support -->
+<a class="flex items-center justify-between p-4 rounded-2xl hover:bg-surface-container-low transition-all duration-300 group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-600 group-hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined">help_center</span>
+</div>
+<div>
+<span class="block font-semibold text-on-surface">Help &amp; Support</span>
+<span class="text-xs text-on-surface-variant">FAQs, contact, documentation</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</a>
+<!-- About -->
+<a class="flex items-center justify-between p-4 rounded-2xl hover:bg-surface-container-low transition-all duration-300 group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-600 group-hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined">info</span>
+</div>
+<div>
+<span class="block font-semibold text-on-surface">About</span>
+<span class="text-xs text-on-surface-variant">v2.4.1 (Stable Build)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</a>
+</nav>
+<!-- Logout Section -->
+<div class="mt-12 px-4">
+<button class="w-full flex items-center justify-center gap-2 py-4 rounded-2xl border-2 border-error/10 text-error font-bold hover:bg-error/5 transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </button>
+<p class="mt-6 text-center text-xs text-on-surface-variant/50 uppercase tracking-widest">Probability AI © 2024</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl flex justify-around items-center px-4 pb-6 pt-3 shadow-[0_-8px_30px_rgb(0,0,0,0.04)] rounded-t-3xl">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-indigo-500 transition-colors">
+<span class="material-symbols-outlined mb-1">chat_bubble</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-widest">Chat</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-indigo-500 transition-colors">
+<span class="material-symbols-outlined mb-1">auto_awesome_mosaic</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-widest">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-gradient-to-br from-indigo-600 to-indigo-800 text-white rounded-2xl px-6 py-2 animate-pulse-subtle">
+<span class="material-symbols-outlined mb-1 active-icon">manage_accounts</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-widest">Settings</span>
+</div>
+</nav>
+</body></html>
