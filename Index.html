@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Probability AI - Intelligent Void</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f0f1f2",
+                    "primary-fixed": "#e1e0ff",
+                    "on-background": "#191c1d",
+                    "inverse-surface": "#2e3132",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#424344",
+                    "on-secondary-fixed": "#001a41",
+                    "on-secondary-fixed-variant": "#004493",
+                    "on-primary-fixed-variant": "#373a9b",
+                    "on-surface": "#191c1d",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "surface-container": "#edeeef",
+                    "outline-variant": "#c5c5d4",
+                    "primary": "#333697",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#4f54b4",
+                    "tertiary-fixed": "#e2e2e2",
+                    "secondary-fixed": "#d8e2ff",
+                    "surface-bright": "#f8f9fa",
+                    "secondary-container": "#0070eb",
+                    "secondary": "#0058bc",
+                    "outline": "#757684",
+                    "primary-container": "#4b4fb0",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "on-secondary-container": "#fefcff",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-primary-fixed": "#04006d",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#d3d3d3",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "surface-container-high": "#e7e8e9",
+                    "surface-container-low": "#f3f4f5",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e1e3e4",
+                    "on-primary-container": "#ceceff",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "inverse-primary": "#c0c1ff",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "surface-dim": "#d9dadb",
+                    "surface": "#f8f9fa",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#454652",
+                    "tertiary-container": "#595b5b",
+                    "background": "#f8f9fa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .message-shadow {
+            box-shadow: 0 4px 20px -2px rgba(51, 54, 151, 0.05);
+        }
+        .void-gradient {
+            background: linear-gradient(135deg, #333697 0%, #4b4fb0 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<aside class="fixed inset-y-0 left-0 z-50 p-4 bg-slate-50 dark:bg-slate-950 rounded-r-2xl h-full w-80 shadow-2xl shadow-indigo-900/10 hidden md:flex flex-col">
+<div class="flex items-center gap-3 px-2 mb-8">
+<div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white shadow-lg shadow-indigo-200">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div>
+<h2 class="text-lg font-black text-indigo-900 dark:text-indigo-100 leading-none">Probability v2</h2>
+<p class="text-xs text-slate-500 font-medium mt-1">Intelligent Void Engine</p>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<button class="w-full flex items-center gap-3 px-4 py-3 bg-indigo-100/50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-200 rounded-xl transition-all duration-300 ease-out font-['Inter'] text-sm font-medium">
+<span class="material-symbols-outlined" data-icon="add_comment">add_comment</span>
+                New Chat
+            </button>
+<button class="w-full flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-300 ease-out font-['Inter'] text-sm font-medium">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+                History
+            </button>
+<button class="w-full flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-300 ease-out font-['Inter'] text-sm font-medium">
+<span class="material-symbols-outlined" data-icon="Model_Training">model_training</span>
+                Models
+            </button>
+<button class="w-full flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-300 ease-out font-['Inter'] text-sm font-medium">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </button>
+</nav>
+<div class="mt-auto pt-4 border-t border-slate-200/50 dark:border-slate-800/50">
+<div class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors cursor-pointer">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of a professional user with a neutral background, soft studio lighting, high resolution" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB70rWAe2e73b-D3QCTbYMdxVIto_4LtL6Ey-e8ei9QKyFhQEk_Iod_HT92QDdWVaLYRWoPU1mGxk83DOhAtgYZmX_h1FGAgMaJghYjnXnIXhkWsLRjuPROJ2V8ZaocnX0M82d3oXsX9VTRiSzaNxMDfylEylD1fKIR72KUol3WBKeL9EpJYKIWRcHhpvG5_IiltSGvCHh7rT_rxYS-m_k93JQHwo2qIbJvFVp8s_lqz3AKLlTICkp-rn9U9PdPPcDDN7B-auU9P9Jh"/>
+<div class="flex-1 overflow-hidden">
+<p class="text-sm font-bold text-slate-900 truncate">Alex Sterling</p>
+<p class="text-xs text-slate-500 truncate">Pro Plan Active</p>
+</div>
+<span class="material-symbols-outlined text-slate-400" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col h-screen md:ml-80 relative overflow-hidden">
+<header class="flex justify-between items-center px-6 py-4 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl sticky top-0 z-30 shadow-sm shadow-indigo-900/5">
+<div class="flex items-center gap-4">
+<button class="md:hidden p-2 text-slate-500 hover:bg-slate-100 transition-colors rounded-lg">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-xl font-bold tracking-tighter text-slate-900 dark:text-slate-50 font-['Inter']">Probability AI</h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 text-slate-500 hover:bg-slate-100 transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600">
+<span class="material-symbols-outlined text-sm" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+</div>
+</header>
+<section class="flex-1 overflow-y-auto p-6 md:p-12 space-y-10 scroll-smooth bg-surface pb-48">
+<div class="max-w-3xl mx-auto space-y-12">
+<div class="flex flex-col items-start gap-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
+<span class="material-symbols-outlined text-lg" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<span class="text-xs font-semibold text-slate-400 uppercase tracking-widest">Probability v2</span>
+</div>
+<div class="bg-surface-container-low text-on-surface px-6 py-5 rounded-xl rounded-tl-sm max-w-[85%] message-shadow">
+<p class="leading-relaxed">Greetings. I am the Intelligent Void engine. How can we compose something remarkable today? I am currently operating on the v2 neural architecture.</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-3">
+<div class="flex items-center gap-3">
+<span class="text-xs font-semibold text-slate-400 uppercase tracking-widest">You</span>
+<div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-lg" data-icon="person">person</span>
+</div>
+</div>
+<div class="void-gradient text-white px-6 py-5 rounded-xl rounded-tr-sm max-w-[85%] shadow-lg shadow-indigo-900/10">
+<p class="leading-relaxed">Can you explain how a probability engine works using a metaphor involving a deep ocean?</p>
+</div>
+</div>
+<div class="flex flex-col items-start gap-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
+<span class="material-symbols-outlined text-lg" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<span class="text-xs font-semibold text-slate-400 uppercase tracking-widest">Probability v2</span>
+</div>
+<div class="bg-surface-container-low text-on-surface px-6 py-5 rounded-xl rounded-tl-sm max-w-[85%] message-shadow">
+<p class="leading-relaxed mb-4">Imagine the engine as a vast, dark ocean. Every potential word or thought is a bioluminescent creature floating in the depths.</p>
+<p class="leading-relaxed">The "Probability" aspect is like the current. Based on the context of your question, the current pulls certain creatures toward the surface. The more likely a thought is to be correct, the brighter and faster it rises to the top, where I catch it and present it to you.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="absolute bottom-0 left-0 right-0 p-4 md:p-8 bg-gradient-to-t from-surface via-surface/90 to-transparent pointer-events-none">
+<div class="max-w-3xl mx-auto w-full pointer-events-auto">
+<div class="flex gap-3 mb-6 overflow-x-auto pb-2 no-scrollbar">
+<button class="flex-shrink-0 flex items-center gap-2 px-4 py-2.5 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-xs font-semibold tracking-wide hover:shadow-md transition-shadow border border-white/50 backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm" data-icon="code">code</span>
+                        Help me write code
+                    </button>
+<button class="flex-shrink-0 flex items-center gap-2 px-4 py-2.5 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-xs font-semibold tracking-wide hover:shadow-md transition-shadow border border-white/50 backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm" data-icon="description">description</span>
+                        Summarize this text
+                    </button>
+<button class="flex-shrink-0 flex items-center gap-2 px-4 py-2.5 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-xs font-semibold tracking-wide hover:shadow-md transition-shadow border border-white/50 backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm" data-icon="lightbulb">lightbulb</span>
+                        Brainstorm ideas
+                    </button>
+</div>
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-[2rem] blur opacity-25 group-focus-within:opacity-100 transition duration-1000 group-focus-within:duration-200"></div>
+<div class="relative flex items-center gap-2 bg-surface-container-lowest border border-outline-variant/10 rounded-2xl p-2 px-4 shadow-2xl shadow-indigo-900/5 backdrop-blur-3xl min-h-[64px]">
+<button class="p-2 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-all">
+<span class="material-symbols-outlined" data-icon="attach_file">attach_file</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-slate-400 font-medium px-2" placeholder="Type your intent into the void..." type="text"/>
+<div class="flex items-center gap-1">
+<button class="p-2 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-all">
+<span class="material-symbols-outlined" data-icon="add_reaction">add_reaction</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-all">
+<span class="material-symbols-outlined" data-icon="mic">mic</span>
+</button>
+<button class="ml-2 w-10 h-10 rounded-xl void-gradient text-white flex items-center justify-center shadow-lg shadow-indigo-200 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="arrow_upward" style="font-variation-settings: 'wght' 600;">arrow_upward</span>
+</button>
+</div>
+</div>
+</div>
+<p class="text-center text-[10px] text-slate-400 mt-4 font-semibold uppercase tracking-[0.2em]">Powered by Probability AI v2.0</p>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 w-full z-40 flex justify-around items-center px-4 pb-6 pt-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl md:hidden">
+<button class="flex flex-col items-center justify-center bg-gradient-to-br from-indigo-600 to-indigo-800 text-white rounded-2xl px-6 py-2 animate-pulse-subtle">
+<span class="material-symbols-outlined" data-icon="chat_bubble" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-widest mt-1">Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-indigo-500 transition-colors">
+<span class="material-symbols-outlined" data-icon="auto_awesome_mosaic">auto_awesome_mosaic</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-widest mt-1">Library</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-indigo-500 transition-colors">
+<span class="material-symbols-outlined" data-icon="manage_accounts">manage_accounts</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-widest mt-1">Settings</span>
+</button>
+</nav>
+</body></html>
