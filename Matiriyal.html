@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Probability AI - Learning Coach</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary-fixed": "#04006d",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "primary-container": "#4b4fb0",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-container": "#ceceff",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "surface": "#f8f9fa",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary": "#0058bc",
+                        "on-surface-variant": "#454652",
+                        "secondary-fixed": "#d8e2ff",
+                        "on-secondary-fixed-variant": "#004493",
+                        "inverse-surface": "#2e3132",
+                        "outline": "#757684",
+                        "secondary-container": "#0070eb",
+                        "outline-variant": "#c5c5d4",
+                        "on-tertiary-container": "#d3d3d3",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-dim": "#d9dadb",
+                        "primary": "#333697",
+                        "on-surface": "#191c1d",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "primary-fixed": "#e1e0ff",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#c0c1ff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#373a9b",
+                        "tertiary": "#424344",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "background": "#f8f9fa",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#001a41",
+                        "surface-bright": "#f8f9fa",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#595b5b",
+                        "on-background": "#191c1d",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-tint": "#4f54b4",
+                        "surface-container": "#edeeef",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-secondary-container": "#fefcff",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift {
+            background-image: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-[#f8f9fa] dark:bg-[#191c1d] flex justify-between items-center px-6 h-16 w-full docked full-width top-0 z-50">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#3F51B5] dark:text-[#333697] hover:bg-[#e1e3e4] transition-colors duration-300 p-2 rounded-full">menu</button>
+<h1 class="text-xl font-black text-[#333697] dark:text-[#4b4fb0] font-inter tracking-tight">Probability AI</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="hidden md:flex gap-6 mr-6">
+<a class="text-[#333697] dark:text-[#4b4fb0] font-medium font-inter label-md" href="#">Dashboard</a>
+<a class="text-[#454652] dark:text-[#c5c5d4] hover:text-[#333697] transition-colors font-medium font-inter label-md" href="#">Learn</a>
+<a class="text-[#454652] dark:text-[#c5c5d4] hover:text-[#333697] transition-colors font-medium font-inter label-md" href="#">Tracks</a>
+</div>
+<img alt="Child user profile photo" class="w-10 h-10 rounded-full border-2 border-primary-container object-cover" data-alt="close-up portrait of a happy young child with a bright smile, soft natural lighting, playful educational background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhBBhmpusfbg5Isd2ZHs30JQbVLxCWmBlOuWI-FMzMzTkKP-z3qZYZTpHJzyMzZ4l6E4_UdqMsMYGLtiD4uws21a0BWqP-t2TPmPzu3Rezeeyt8FWmLMvtNjSKKbB_zkDiQhRdUX1PAYoB_VvHgDMw4OhDXzjUXTlX18HRWqFM-_3yXxzlKEv4fyMyYYQ89TawHKs11riKslq6WNXfGM6s4YfN3NsL2hUFvfsezolli-xFitiYWeJ-cA1HRin4HVnYkSFrC2cuUvMN"/>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 pt-8 pb-32">
+<!-- Hero Greeting Section -->
+<section class="mb-12">
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary to-primary-container p-8 md:p-12 text-on-primary shadow-xl shadow-primary/10">
+<div class="relative z-10 max-w-2xl">
+<h2 class="text-4xl md:text-5xl font-black tracking-tight mb-4">Hello, Little Explorer! 👋</h2>
+<p class="text-lg opacity-90 mb-8 font-medium">Ready to continue your journey through the stars? You've earned 12 stars since yesterday!</p>
+<button class="bg-secondary-fixed text-on-secondary-fixed px-8 py-4 rounded-xl font-bold flex items-center gap-3 scale-100 hover:scale-105 transition-transform ease-in-out shadow-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+                        Continue Learning
+                    </button>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/4 blur-3xl"></div>
+<div class="absolute bottom-0 right-0 p-8 hidden md:block">
+<span class="material-symbols-outlined text-9xl opacity-20" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Main Content: Subject Cards -->
+<div class="lg:col-span-8 space-y-8">
+<div class="flex justify-between items-end mb-2">
+<h3 class="headline-md font-bold text-on-surface tracking-tight">Your Adventures</h3>
+<button class="text-primary font-bold text-sm hover:underline">View All</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Math Wizard -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-outline-variant/10 group cursor-pointer">
+<div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-blue-600 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="functions">functions</span>
+</div>
+<h4 class="text-xl font-bold mb-2">Math Wizard</h4>
+<p class="text-on-surface-variant text-sm mb-6">Mastering the magic of numbers and patterns.</p>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold text-on-surface-variant uppercase tracking-wider">
+<span>Progress</span>
+<span>75%</span>
+</div>
+<div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-blue-500 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+</div>
+<!-- Science Lab -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-outline-variant/10 group cursor-pointer">
+<div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6 text-purple-600 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="biotech">biotech</span>
+</div>
+<h4 class="text-xl font-bold mb-2">Science Lab</h4>
+<p class="text-on-surface-variant text-sm mb-6">Discover the secrets of the tiny world around us.</p>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold text-on-surface-variant uppercase tracking-wider">
+<span>Progress</span>
+<span>42%</span>
+</div>
+<div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-purple-500 rounded-full" style="width: 42%"></div>
+</div>
+</div>
+</div>
+<!-- Word Play -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-outline-variant/10 group cursor-pointer">
+<div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6 text-orange-600 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="translate">translate</span>
+</div>
+<h4 class="text-xl font-bold mb-2">Word Play</h4>
+<p class="text-on-surface-variant text-sm mb-6">Build your vocabulary with exciting stories.</p>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold text-on-surface-variant uppercase tracking-wider">
+<span>Progress</span>
+<span>90%</span>
+</div>
+<div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-orange-500 rounded-full" style="width: 90%"></div>
+</div>
+</div>
+</div>
+<!-- World History -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-outline-variant/10 group cursor-pointer">
+<div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center mb-6 text-emerald-600 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="public">public</span>
+</div>
+<h4 class="text-xl font-bold mb-2">World History</h4>
+<p class="text-on-surface-variant text-sm mb-6">Travel through time to meet famous heroes.</p>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold text-on-surface-variant uppercase tracking-wider">
+<span>Progress</span>
+<span>15%</span>
+</div>
+<div class="h-3 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 rounded-full" style="width: 15%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Section: Quick Actions -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+<div class="md:col-span-2 bg-secondary-fixed-dim p-8 rounded-xl flex items-center justify-between overflow-hidden relative group">
+<div class="z-10">
+<h4 class="text-2xl font-black text-on-secondary-fixed mb-2">Need a Hint?</h4>
+<p class="text-on-secondary-fixed-variant mb-6 font-medium">Talk to your Learning Coach now.</p>
+<button class="bg-secondary-container text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined">mic</span>
+                                Talk to Coach
+                            </button>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-10 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[12rem]">chat_bubble</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col items-center justify-center text-center border-dashed border-2 border-outline-variant/30">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-inner mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">add</span>
+</div>
+<p class="text-sm font-bold text-on-surface-variant uppercase tracking-tighter">Add New Subject</p>
+</div>
+</div>
+</div>
+<!-- Sidebar: Today's Quest -->
+<aside class="lg:col-span-4 space-y-8">
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<h3 class="text-xl font-black tracking-tight">Today's Quest</h3>
+</div>
+<div class="space-y-4">
+<!-- Quest Item -->
+<div class="bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-green-600 shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Morning Reading</p>
+<p class="text-xs text-on-surface-variant">Completed</p>
+</div>
+<span class="material-symbols-outlined text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<!-- Quest Item -->
+<div class="bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4 border-2 border-primary/10">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined">radio_button_unchecked</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Math Wizard Challenge</p>
+<p class="text-xs text-on-surface-variant">5 minutes remaining</p>
+</div>
+<span class="material-symbols-outlined text-surface-variant">star</span>
+</div>
+<!-- Quest Item -->
+<div class="bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4 opacity-60">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Science Experiment</p>
+<p class="text-xs text-on-surface-variant">Unlocks at 4:00 PM</p>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-outline-variant/10">
+<h4 class="text-sm font-bold text-on-surface-variant mb-4 uppercase tracking-widest">Recent Badges</h4>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-gradient-to-tr from-yellow-400 to-orange-400 flex items-center justify-center text-white shadow-lg shadow-orange-200" title="Daily Streak">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-gradient-to-tr from-blue-400 to-indigo-400 flex items-center justify-center text-white shadow-lg shadow-blue-200" title="Quick Thinker">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-400 to-pink-400 flex items-center justify-center text-white shadow-lg shadow-purple-200" title="Book Worm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Learning Tip Card -->
+<div class="relative rounded-xl overflow-hidden aspect-square flex flex-col justify-end p-6 group cursor-pointer">
+<div class="absolute inset-0 bg-black/40 z-10"></div>
+<img alt="Education learning concept" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="vibrant educational scene with colorful books and scientific equipment on a wooden table, warm sunlight streaming through a window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvKzPudWLL48cfoZvpoKE7pxLIF9DzdnQZQgkiucb8Qccu3ERwg8CkMyYPamSc7avKsJQ1KRSgLCAGjV8Zb91JaoPLpZPdWWLZoRkIG36Sa20-uX70sHODmudzsvE0yQ-jtE4wQPKaoS8tZ4qQZomvx5uFHrhmdCzUKkwLZ9XkK7tNFug32zsQIgXcTV93hwuny_ZY2LFuph5GtAg1sxoA6CEAc3eV-cAPxh_Iu0ZwcnR-e5Sqdastnux7gSgIVLcFENEvQ6FQ8O6Q"/>
+<div class="relative z-20 text-white">
+<span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 inline-block">Coach Tip</span>
+<h4 class="text-xl font-bold leading-tight">Did you know that stars are giant balls of gas?</h4>
+<p class="text-sm opacity-80 mt-2">Tap to learn more about the night sky!</p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-2 bg-white/80 dark:bg-[#191d1d]/80 backdrop-blur-xl rounded-t-[1.5rem] shadow-[0px_-4px_32px_rgba(63,81,181,0.06)] md:hidden">
+<a class="flex flex-col items-center justify-center bg-[#d8e2ff] dark:bg-[#333697]/30 text-[#333697] dark:text-[#d8e2ff] rounded-[1.5rem] px-5 py-1 scale-105 transition-transform ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-inter text-[12px] font-medium label-md">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#454652] dark:text-[#c5c5d4] px-5 py-1 hover:text-[#333697] dark:hover:text-[#4b4fb0]" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-inter text-[12px] font-medium label-md">Tracks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#454652] dark:text-[#c5c5d4] px-5 py-1 hover:text-[#333697] dark:hover:text-[#4b4fb0]" href="#">
+<span class="material-symbols-outlined">military_tech</span>
+<span class="font-inter text-[12px] font-medium label-md">Badges</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#454652] dark:text-[#c5c5d4] px-5 py-1 hover:text-[#333697] dark:hover:text-[#4b4fb0]" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-inter text-[12px] font-medium label-md">Help</span>
+</a>
+</nav>
+<!-- Floating FAB (Contextual Talk to Coach) -->
+<button class="fixed right-6 bottom-24 md:bottom-8 z-50 w-16 h-16 bg-gradient-to-br from-[#333697] to-[#4b4fb0] text-white rounded-full shadow-2xl flex items-center justify-center scale-100 hover:scale-110 active:scale-95 transition-transform duration-300">
+<span class="material-symbols-outlined text-3xl">mic</span>
+</button>
+</body></html>
