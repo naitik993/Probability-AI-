@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Probability AI - Lesson</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary-fixed": "#04006d",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "primary-container": "#4b4fb0",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-container": "#ceceff",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "surface": "#f8f9fa",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary": "#0058bc",
+                        "on-surface-variant": "#454652",
+                        "secondary-fixed": "#d8e2ff",
+                        "on-secondary-fixed-variant": "#004493",
+                        "inverse-surface": "#2e3132",
+                        "outline": "#757684",
+                        "secondary-container": "#0070eb",
+                        "outline-variant": "#c5c5d4",
+                        "on-tertiary-container": "#d3d3d3",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-dim": "#d9dadb",
+                        "primary": "#333697",
+                        "on-surface": "#191c1d",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "primary-fixed": "#e1e0ff",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#c0c1ff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#373a9b",
+                        "tertiary": "#424344",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "background": "#f8f9fa",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#001a41",
+                        "surface-bright": "#f8f9fa",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#595b5b",
+                        "on-background": "#191c1d",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-tint": "#4f54b4",
+                        "surface-container": "#edeeef",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-secondary-container": "#fefcff",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift {
+            background: linear-gradient(180deg, #f8f9fa 0%, #f3f4f5 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .pinch-bubble-ai {
+            border-radius: 1.5rem 1.5rem 1.5rem 0.25rem;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col">
+<header class="fixed top-0 w-full z-50 bg-[#f8f9fa] dark:bg-[#191c1d] flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#3F51B5] dark:text-[#333697] hover:bg-[#e1e3e4] transition-colors duration-300 p-2 rounded-full">arrow_back</button>
+<h1 class="font-inter tracking-tight headline-md font-bold text-xl text-[#333697] dark:text-[#4b4fb0]">Probability AI</h1>
+</div>
+<div class="flex items-center gap-2">
+<div class="h-10 w-10 rounded-full overflow-hidden bg-surface-container-high">
+<img class="h-full w-full object-cover" data-alt="Close-up avatar of a friendly student or user with a soft focused bright background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNcpztIz5P7s-lgg_CBG4-L22dodWLdN9-X4wIUhClzzHBiHtkLXGnS4QLbfO4kLAXte7eB7UrPl9QqwKVAPbxmWmJemZl5-aR7Y2pJFCcJVb8NOfSi6nD_OY5UOhzAaugJ8ckI8Z5jNRwGHyJ7uJX2TQeJDw4jK5DDOLrdVFCRuYUePZaPPV36Cz2JBdFshegO4BG9tbAxu_dqmIlHn_Fd8j03iSAMmWpKfJSoFRrOPn0omfvz63hCAMWM-IWnc-o8gqFma-L3t5_"/>
+</div>
+</div>
+</header>
+<main class="mt-16 flex-grow flex flex-col max-w-4xl mx-auto w-full p-6 pb-32">
+<section class="flex flex-col gap-8">
+<div class="w-full flex items-center justify-between gap-4">
+<div class="flex-grow bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-[#333697] to-[#4b4fb0] h-full w-3/5 rounded-full"></div>
+</div>
+<span class="text-on-surface-variant font-medium label-md whitespace-nowrap">Step 3 of 5</span>
+</div>
+<div class="flex flex-col md:flex-row gap-6 items-start">
+<div class="w-20 h-20 shrink-0 bg-gradient-to-br from-[#333697] to-[#4b4fb0] rounded-full flex items-center justify-center shadow-lg shadow-[#333697]/20">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div class="flex-grow">
+<div class="bg-surface-container-lowest pinch-bubble-ai p-6 shadow-[0px_4px_24px_rgba(63,81,181,0.06)] border border-outline-variant/10">
+<h2 class="headline-md font-bold text-[#333697] mb-2">How do plants grow?</h2>
+<p class="text-on-surface-variant leading-relaxed">
+                            Think of a plant like a tiny solar-powered factory! To grow big and strong, plants need four essential things: <span class="font-semibold text-primary">Sunlight</span>, <span class="font-semibold text-primary">Water</span>, <span class="font-semibold text-primary">Air</span>, and <span class="font-semibold text-primary">Nutrients</span> from the soil. They use sunlight to turn air and water into food. This magic process is called <span class="italic">Photosynthesis</span>!
+                        </p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-low rounded-[1.5rem] p-4 flex flex-col gap-4 overflow-hidden">
+<img class="w-full h-48 object-cover rounded-xl" data-alt="A small green sprout emerging from rich dark soil under bright warm sunlight with a soft focus garden background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoTSIXeSndiVUSn9_Ge0CjI0OF6sREXED65R08Y0Y-eaiUTp6m5ra9SJNSxUmWBs5YAAvc6XcXykPLM3G45Kyl37v1gCTJxSaKMWWcvRv7hmGjOrfZ2e02y8RUA4Pj70wCNnPhtDQld5ngIH5GtEH7CgGaFbGCF54aXxzOQMa7gtpgzRmy3dts9GMVhRGAPNpaxeEWh-XthOxWwLIk2G286p3vgQQwlE8s2J5ac0nrnn0WQQvgjh5TXjBoPD_sxz9HQnSZCJcKHiaI"/>
+<div class="px-2">
+<p class="text-on-surface-variant text-sm text-center">Stage 1: Seed Germination</p>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-[1.5rem] p-4 flex flex-col gap-4 overflow-hidden">
+<img class="w-full h-48 object-cover rounded-xl" data-alt="Close up of bright green leaves with sunlight filtering through, highlighting the veins and cellular structure of the leaf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL3kgOmRmBhgBKkhcCX1PgBxUzCpLXviLS8eDGmYQeTh5O8FGU0gltLx5hSHbXfg27lNEf-JUGMKFYXHp4qdSnZQDHykXiMYb5EuHav42EzXd1-8imBfgt27-h3rfI5fGFx7pxXiMlVbYJ1MY9NJ-0-yRblbSSDrKAb8DRDKVYmXTM-eOIUP47ivs4b9qQ6qa4915AWGMzFYAcsPj5MvXzXSCyzZEXwmEtY5O7mew9Flw7E1dDLZj0C6S1xVGQDfLYz3EDngZ11igD"/>
+<div class="px-2">
+<p class="text-on-surface-variant text-sm text-center">Stage 2: Photosynthesis in action</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-[1.5rem] p-8 shadow-[0px_8px_32px_rgba(0,0,0,0.04)]">
+<h3 class="headline-md font-bold text-on-surface mb-6 text-center">Quick Check!</h3>
+<p class="text-on-surface-variant mb-8 text-center">What is the special name for the process plants use to make their own food using sunlight?</p>
+<div class="grid grid-cols-1 gap-4">
+<button class="group w-full flex items-center justify-between p-5 rounded-xl bg-surface-container-low hover:bg-[#d8e2ff] transition-all duration-300 text-left border border-transparent hover:border-[#333697]/20">
+<span class="font-medium text-on-surface group-hover:text-[#333697]">A) Respiration</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 text-[#333697]">radio_button_unchecked</span>
+</button>
+<button class="group w-full flex items-center justify-between p-5 rounded-xl bg-[#d8e2ff] text-[#333697] border border-[#333697]/30 transition-all duration-300 text-left">
+<span class="font-bold">B) Photosynthesis</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<button class="group w-full flex items-center justify-between p-5 rounded-xl bg-surface-container-low hover:bg-[#d8e2ff] transition-all duration-300 text-left border border-transparent hover:border-[#333697]/20">
+<span class="font-medium text-on-surface group-hover:text-[#333697]">C) Hibernation</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 text-[#333697]">radio_button_unchecked</span>
+</button>
+</div>
+<div class="mt-8 bg-secondary-fixed/50 p-6 rounded-xl border border-secondary-container/10 flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary-container mt-1" style="font-variation-settings: 'FILL' 1;">celebration</span>
+<div>
+<p class="font-bold text-on-secondary-fixed-variant">That's exactly right!</p>
+<p class="text-on-secondary-fixed-variant/80 text-sm">You've got it! Photosynthesis is how plants turn solar energy into life. Ready for the next challenge?</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-2 bg-white/80 dark:bg-[#191c1d]/80 backdrop-blur-xl rounded-t-[1.5rem] shadow-[0px_-4px_32px_rgba(63,81,181,0.06)]">
+<a class="flex flex-col items-center justify-center bg-[#d8e2ff] dark:bg-[#333697]/30 text-[#333697] dark:text-[#d8e2ff] rounded-[1.5rem] px-5 py-1 scale-105 transition-transform ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-inter text-[12px] font-medium label-md">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#454652] dark:text-[#c5c5d4] px-5 py-1 hover:text-[#333697] dark:hover:text-[#4b4fb0]" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-inter text-[12px] font-medium label-md">Tracks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#454652] dark:text-[#c5c5d4] px-5 py-1 hover:text-[#333697] dark:hover:text-[#4b4fb0]" href="#">
+<span class="material-symbols-outlined">military_tech</span>
+<span class="font-inter text-[12px] font-medium label-md">Badges</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#454652] dark:text-[#c5c5d4] px-5 py-1 hover:text-[#333697] dark:hover:text-[#4b4fb0]" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-inter text-[12px] font-medium label-md">Help</span>
+</a>
+</nav>
+<div class="fixed bottom-24 right-6">
+<button class="bg-gradient-to-br from-[#333697] to-[#4b4fb0] text-white h-14 px-8 rounded-full shadow-lg shadow-[#333697]/30 font-bold flex items-center gap-2 hover:scale-105 transition-transform">
+<span>Next Topic</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</body></html>
